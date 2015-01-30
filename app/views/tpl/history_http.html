@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="styles/contacts.css"/>
+<h2>history for http</h2>
+<div class="input-group pull-right global-search">
+    <label class="input-group-addon">全局搜索</label>
+    <input type="text" class="form-control" ng-model="vm.filter.$"/>
+</div>
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th ng-repeat="column in vm.columns" ng-if="!column.hidden" ng-click="vm.sort.toggle(column)"
+            ng-class="{sortable: column.sortable !== false}">
+            {{column.label}}
+            <i ng-if="column.name === vm.sort.column && vm.sort.direction"
+               class="glyphicon {{vm.sort.direction|orderClass}}"></i>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--<tr>-->
+        <!--<td><input type="text" ng-model="vm.filter.id" class="form-control" placeholder="查询"/></td>-->
+        <!--<td><input type="text" ng-model="vm.filter.ip_wan" class="form-control" placeholder="查询"/></td>-->
+        <!--<td><input type="text" ng-model="vm.filter.server_name" class="form-control" placeholder="查询"/></td>-->
+        <!--<td><input type="text" ng-model="vm.filter.app_name" class="form-control" placeholder="查询"/></td>-->
+        <!--<td><input type="text" ng-model="vm.filter.pid" class="form-control" placeholder="查询"/></td>-->
+        <!--<td><input type="text" ng-model="vm.filter.status" class="form-control" placeholder="查询"/></td>-->
+        <!--<td><input type="text" ng-model="vm.filter.restarted" class="form-control" placeholder="查询"/></td>-->
+        <!--<td><input type="text" ng-model="vm.filter.uptime" class="form-control" placeholder="查询"/></td>-->
+        <!--<td><input type="text" ng-model="vm.filter.memory" class="form-control" placeholder="查询"/></td>-->
+        <!--<td><input type="text" ng-model="vm.filter.cjtime" class="form-control" placeholder="查询"/></td>-->
+        <!--<td></td>-->
+    <!--</tr>-->
+    <tr ng-repeat="item in vm.items|filter:vm.filter|orderBy:vm.sort.column:vm.sort.direction===-1|paging:vm.page.index:vm.page.size">
+        <td class="text-right">
+            <span ng-if="!item.$editing">{{item.id|number}}</span>
+            <input type="number" class="form-control" ng-model="item.id" ng-if="item.$editing"/>
+        </td>
+        <td class="text-right">
+            <span ng-if="!item.$editing">{{item.ip_wan}}</span>
+            <input type="number" class="form-control" ng-model="item.ip_wan" ng-if="item.$editing"/>
+        </td>
+        <td>
+            <span ng-if="!item.$editing">{{item.server_name}}</span>
+            <input type="text" class="form-control" ng-model="item.server_name" ng-if="item.$editing"/>
+        </td>
+        <td class="text-right">
+            <span ng-if="!item.$editing">{{item.app_name}}</span>
+            <input type="text" class="form-control" ng-model="item.app_name" ng-if="item.$editing"/>
+        </td>
+        <td class="text-right">
+            <span ng-if="!item.$editing">{{item.pid|number}}</span>
+            <input type="number" class="form-control" ng-model="item.pid" ng-if="item.$editing"/>
+        </td>
+        <td>
+            <span ng-if="!item.$editing">{{item.status}}</span>
+            <input type="text" class="form-control" ng-model="item.status" ng-if="item.$editing"/>
+        </td>
+        <td>
+            <span ng-if="!item.$editing">{{item.restarted|number}}</span>
+            <input type="text" class="form-control" ng-model="item.restarted" ng-if="item.$editing"/>
+        </td>
+        <td>
+            <span ng-if="!item.$editing">{{item.uptime}}</span>
+            <input type="text" class="form-control" ng-model="item.uptime" ng-if="item.$editing"/>
+        </td>
+        <td>
+            <span ng-if="!item.$editing">{{item.cpu}}</span>
+            <input type="text" class="form-control" ng-model="item.cpu" ng-if="item.$editing"/>
+        </td>
+        <td>
+            <span ng-if="!item.$editing">{{item.memory}}</span>
+            <input type="text" class="form-control" ng-model="item.memory" ng-if="item.$editing"/>
+        </td>
+        <td>
+            <span ng-if="!item.$editing">{{item.cjtime}}</span>
+            <input type="text" class="form-control" ng-model="item.cjtime" ng-if="item.$editing"/>
+        </td>
+        <!--<td class="text-right">-->
+            <!--<span ng-if="!item.$editing">{{item.income|currency}}</span>-->
+            <!--<input type="number" class="form-control" ng-model="item.income" ng-if="item.$editing"/>-->
+        <!--</td>-->
+        <!--<td>-->
+        <!--<span class="btn btn-primary btn-xs" title="详情" ng-mouseenter="item.popover=true"-->
+              <!--ng-mouseleave="item.popover=false"><i-->
+                <!--class="glyphicon glyphicon-comment"></i></span>-->
+
+            <!--<div class="relative">-->
+                <!--<div class="popover" ng-style="{display: item.popover?'block':'none'}">-->
+                    <!--<div class="popover-title">-->
+                        <!--{{item.id}} - {{item.name}}-->
+                    <!--</div>-->
+                    <!--<div class="popover-content">-->
+                        <!--生日：{{item.followers|number}}<br/>-->
+                        <!--生日：{{item.birthday|date}}<br/>-->
+                        <!--年龄：{{vm.age(item.birthday)}}岁<br/>-->
+                        <!--生日：{{item.income|currency}}-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-md-1">
+        <select ng-model="vm.page.size" class="form-control" title="每页条目数"
+                ng-options="pageSize for pageSize in [5, 10, 20,100]">
+        </select>
+    </div>
+    <div class="col-md-9">
+        <pagination total-items="vm.items|filter:vm.filter|size" ng-model="vm.page.index" max-size="5"
+                    items-per-page="vm.page.size"
+                    class="pagination-sm pull-right" boundary-links="true"></pagination>
+    </div>
+</div>

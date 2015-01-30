@@ -1,0 +1,13 @@
+{
+  "name": "netManger",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "=1.2.20",
+    "angular-bootstrap": "~0.10.0",
+    "bootstrap": "~3.1.1",
+    "highcharts-release": "~3.0.7",
+    "angular-route": "=1.2.20"
+  },
+  "devDependencies": {}
+}
