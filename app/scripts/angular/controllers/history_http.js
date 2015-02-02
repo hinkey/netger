@@ -86,6 +86,7 @@ contactsControllers.controller('hisHttp', ['$scope', '$http',
         var url = '/api/history_http';
         $http({method: 'GET', url: url}).success(function (data, status, headers, config) {
             //$scope.lists = data.users; //直接data不行
+            console.log("ww12wefregf");
             vm.items = [];
             for (var i = 0; i < data.detail.length; ++i) {
                 vm.items.push({

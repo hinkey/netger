@@ -39,6 +39,7 @@ exports.selectAll = function (req, res, next) {
             res.send(resultCode.result(1));  //用户信息没找到
         }
         else {
+            console.log('user ' + req.user.email + ' is calling /api/restricted');
             res.send(resultCode.result(0, results));
         }
     });

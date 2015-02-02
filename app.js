@@ -10,6 +10,8 @@ app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
 app.engine('.html', ejs.__express);
 app.set('view engine', 'html'); //替换文件扩展名ejs为html
+app.use(express.json());
+app.use(express.urlencoded());
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
