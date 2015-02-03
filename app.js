@@ -46,5 +46,5 @@ for (var i = 1; i < 60; i++) {
 }
 rule.minute = times;
 var j = schedule.scheduleJob(rule, function () {
-    gather.gather();
+    //gather.gather();
 });

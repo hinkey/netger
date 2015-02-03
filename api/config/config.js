@@ -1,4 +1,4 @@
-exports.db_conn = 'mongodb://ww:www123@t.10000bee.com:27017/netmanager';
+exports.db_conn = 'mongodb://netger:www123@a.oaapi.com:27017/netger';
 var time = require('time');
 
 exports.now_time = function(){

@@ -1,45 +1,74 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
+<!doctype html>
+<html ng-app="my.app.module">
 <head>
     <meta charset="utf-8">
-    <title>网络管理平台</title>
-    <meta name="description" content="Copyright http://">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <!--<link rel="stylesheet" href="styles/css.css">-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-js/angular-ui-router.js"></script>
+    <script src="bower_components/other/angular-animate.js"></script>
+    <script src="scripts/angular/app.js"></script>
+    <script src="scripts/angular/controllers/login.js"></script>
+    <script src="scripts/angular/controllers/controllers.js"></script>
+    <script src="scripts/angular/controllers/contacts.js"></script>
+    <script src="scripts/angular/controllers/position.js"></script>
+    <script src="scripts/angular/controllers/chart.js"></script>
+    <script src="scripts/angular/filter/contacts.js"></script>
+    <script src="scripts/angular/directives/highcharts.js"></script>
+    <script src="scripts/angular/filter/history_http.js"></script>
+    <script src="scripts/angular/controllers/history_http.js"></script>
 </head>
-<body ng-app="my.app.module">
-
-<div class="container">
-    <h2 class="text-primary">
-        <a >网络管理平台</a>
-    </h2>
-    <!--<p>时间管理登录</p>-->
-    <div class="row">
-        <div class=".col-lg-12">
-            <div ng-view></div>
-        </div>
-    </div>
-</div>
-
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="bower_components/angular-route/angular-route.min.js"></script>
-<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-<script src="bower_components/highcharts-release/highcharts.js"></script>
-<script src="bower_components/highcharts-release/highcharts-more.js"></script>
-<script src="bower_components/highcharts-release/modules/exporting.src.js"></script>
-<script src="scripts/angular/app.js"></script>
-<script src="scripts/angular/controllers/login.js"></script>
-<script src="scripts/angular/controllers/controllers.js"></script>
-<script src="scripts/angular/controllers/contacts.js"></script>
-<script src="scripts/angular/controllers/position.js"></script>
-<script src="scripts/angular/controllers/chart.js"></script>
-<script src="scripts/angular/filter/contacts.js"></script>
-<script src="scripts/angular/directives/highcharts.js"></script>
-<script src="scripts/angular/filter/history_http.js"></script>
-<script src="scripts/angular/controllers/history_http.js"></script>
+<body>
+<div ui-view></div>
 </body>
 </html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="zh-cn">-->
+<!--<head>-->
+    <!--<meta charset="utf-8">-->
+    <!--<title>网络管理平台</title>-->
+    <!--<meta name="description" content="Copyright http://">-->
+    <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="styles/main.css">-->
+    <!--&lt;!&ndash;<link rel="stylesheet" href="styles/css.css">&ndash;&gt;-->
+<!--</head>-->
+<!--<body ng-app="my.app.module">-->
+
+<!--<div class="container">-->
+    <!--<h2 class="text-primary">-->
+        <!--<a >网络管理平台</a>-->
+    <!--</h2>-->
+    <!--&lt;!&ndash;<p>时间管理登录</p>&ndash;&gt;-->
+    <!--<div class="row">-->
+        <!--<div class=".col-lg-12">-->
+            <!--<div ng-view></div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
+<!--<script src="bower_components/jquery/dist/jquery.js"></script>-->
+<!--<script src="bower_components/angular/angular.min.js"></script>-->
+<!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+<!--<script src="bower_components/angular-route/angular-route.min.js"></script>-->
+<!--<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>-->
+<!--<script src="bower_components/highcharts-release/highcharts.js"></script>-->
+<!--<script src="bower_components/highcharts-release/highcharts-more.js"></script>-->
+<!--<script src="bower_components/highcharts-release/modules/exporting.src.js"></script>-->
+<!--<script src="scripts/angular/app.js"></script>-->
+<!--<script src="scripts/angular/controllers/login.js"></script>-->
+<!--<script src="scripts/angular/controllers/controllers.js"></script>-->
+<!--<script src="scripts/angular/controllers/contacts.js"></script>-->
+<!--<script src="scripts/angular/controllers/position.js"></script>-->
+<!--<script src="scripts/angular/controllers/chart.js"></script>-->
+<!--<script src="scripts/angular/filter/contacts.js"></script>-->
+<!--<script src="scripts/angular/directives/highcharts.js"></script>-->
+<!--<script src="scripts/angular/filter/history_http.js"></script>-->
+<!--<script src="scripts/angular/controllers/history_http.js"></script>-->
+<!--</body>-->
+<!--</html>-->
